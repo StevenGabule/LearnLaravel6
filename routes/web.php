@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('full-text-search', 'FullTextSearchController@index');
+Auth::routes();
 
-Route::post('full-text-search/action', 'FullTextSearchController@action')->name('full-text-search.action');
+Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('full-text-search/normal-search', 'FullTextSearchController@normal_search')->name('full-text-search.normal-search');
+Route::get('post', 'PostController@create')->name('create');
